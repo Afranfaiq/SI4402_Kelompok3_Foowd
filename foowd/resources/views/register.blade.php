@@ -14,6 +14,11 @@
 </head>
 <body class="text-center">
     <span class="border form-signin w-100 m-auto rounded" >
+    @if($errors->any())
+        @foreach($errors->all() as $err)
+        <p class="alert alert-danger">{{ $err }}</p>
+        @endforeach
+        @endif
             <form action="{{ route('register.action') }}" method="POST">
             @csrf
                 <a href="/">
@@ -21,7 +26,7 @@
                 </a>
             
                 <div class="form-floating">
-                    <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" name="Email">
+                    <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" name="email">
                     <label for="floatingInput">Email address</label>
                 </div>
                 <br>
@@ -41,12 +46,12 @@
                 </div>
                 <br>
                 <div class="form-floating">
-                    <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="Password">
+                    <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="password">
                     <label for="floatingPassword">Password</label>
                 </div>
                 <br>
                 <div class="form-floating">
-                    <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="Password2">
+                    <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="password2">
                     <label for="floatingPassword">Password Confirmation</label>
                 </div>
                 <br><br>

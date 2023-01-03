@@ -21,20 +21,20 @@ class UserController extends Controller
     public function register_action(Request $request)
     {
         $request->validate([
-            'Email' => 'required|unique:users',
+            'email' => 'required|unique:users',
             'Name' => 'required',
             'Number' => 'required',
             'Date'=>'required',
-            'Password' => 'required',
-            'Password2' => 'required|same:Password',
+            'password' => 'required',
+            'password2' => 'required|same:password',
         ]);
 
         $user = new User([
-            'email' => $request->Email,
+            'email' => $request->email,
             'nama' => $request->Name,
             'no_hp' => $request->Number,
             'birth' => $request->Date,
-            'password' => Hash::make($request->Password),
+            'password' => Hash::make($request->password),
         ]);
         $user->save();
 
@@ -46,7 +46,7 @@ class UserController extends Controller
             'email' => 'required',
             'password' => 'required',
         ]);
-        if (Auth::attempt(['email' => $request->Email, 'password' => $request->Password])) {
+        if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
             $request->session()->regenerate();
             return redirect()->intended('/');
         }
@@ -54,6 +54,35 @@ class UserController extends Controller
         return back()->withErrors([
             'password' => 'Wrong email or password',
         ]);
+    }
+    public function logout(Request $request)
+    {
+        Auth::logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+        return redirect('/');
+    }
+    public function profile()
+    {
+        return view('user.profile');
+    }
+
+    public function profile_action(Request $request)
+    {   
+         
+        $request->validate([
+            'name' => 'required',
+            'no_hp' => 'required',
+            'new_password' => 'required|confirmed',
+
+        ]);
+        $user = User::find(Auth::id());
+        $user->nama = $request->name;
+        $user->no_hp = $request->no_hp;
+        $user->password = Hash::make($request->new_password);
+        $user->save();
+        $request->session()->regenerate();
+        return back();
     }
 
 }

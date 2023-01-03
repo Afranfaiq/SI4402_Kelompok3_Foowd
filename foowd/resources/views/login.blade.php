@@ -14,6 +14,14 @@
 </head>
 <body class="text-center">
     <span class="border form-signin w-100 m-auto rounded" >
+    @if(session('success'))
+        <p class="alert alert-success">{{ session('success') }}</p>
+        @endif
+        @if($errors->any())
+        @foreach($errors->all() as $err)
+        <p class="alert alert-danger">{{ $err }}</p>
+        @endforeach
+        @endif
             <form action="{{ route('login.action') }}" method="POST">
             @csrf
                 <a href="/">
@@ -22,19 +30,19 @@
                 
             
                 <div class="form-floating">
-                    <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                    <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" name = "email">
                     <label for="floatingInput">Email address</label>
                 </div>
                 <br>
                 <div class="form-floating">
-                    <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                    <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name= "password">
                     <label for="floatingPassword">Password</label>
                 </div>
                 <a href="forget password.html" style="text-align: right;">Forget your password?</a>
                 <br><br>
             
                 </div>
-                <button class="w-25 btn btn-book-a-table"  type="button">Log in</button>
+                <button class="w-25 btn btn-book-a-table"  type="submit">Log in</button>
                 <br><br>
                 <a href="login admin.html"><button class="w-25 btn btn-book-a-tables"  type="button">Log in as Admin</button></a>
                 </form>

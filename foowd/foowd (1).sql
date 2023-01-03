@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 03, 2023 at 04:59 AM
+-- Generation Time: Jan 03, 2023 at 07:55 AM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -59,7 +59,7 @@ CREATE TABLE `foowdusers` (
 --
 
 INSERT INTO `foowdusers` (`id`, `email`, `nama`, `no_hp`, `birth`, `password`, `created_at`, `updated_at`) VALUES
-(1, 'afraayinfaiq@gmail.com', 'Elkan', '0814206999', '2023-01-02', '$2y$10$t3R06.JaAjHLycCwa3Bf/.yf5OMKEwHQSOzOBOSKvY8PDTVxeGDxm', '2023-01-02 12:08:46', '2023-01-02 12:08:46');
+(6, 'tes@gmail.com', 'tes', '123', '2008-01-29', '$2y$10$HYkcSdEEpAnfq.s4sqOB2u0AUv1ntp9NogwtWd7ZMJYhxA6yPWLj6', '2023-01-02 22:33:57', '2023-01-02 22:33:57');
 
 -- --------------------------------------------------------
 
@@ -190,7 +190,7 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `foowdusers`
 --
 ALTER TABLE `foowdusers`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `migrations`
