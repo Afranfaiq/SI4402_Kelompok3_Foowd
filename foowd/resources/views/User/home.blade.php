@@ -1,133 +1,27 @@
   @extends('user.header')
   @section('content')
     @auth
-
-      <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
-          <div class="carousel-indicators">
-            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-          </div>
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill=" #4fb848"/>
-                <image href="../Image/waste.png" alt="" width="100%" height="100%">
-              </svg>
-      
-              <div class="container">
-                <div class="carousel-caption text-start">
-                  <h1>Foodwaste.</h1>
-                  <p>Some representative placeholder content for the first slide of the carousel.</p>
-                </div>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill=" #4fb848"/>
-                <image href="../Image/foodws.jpg" alt="" width="100%" height="100%">
-              </svg>
-      
-              <div class="container">
-                <div class="carousel-caption">
-                  <h1>Another example headline.</h1>
-                  <p>Some representative placeholder content for the second slide of the carousel.</p>
-                </div>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill=" #4fb848"/>
-                <image href="../Image/foodws.jpg" alt="" width="100%" height="100%"></svg>
-      
-              <div class="container">
-                <div class="carousel-caption text-end">
-                  <h1>One more for good measure.</h1>
-                  <p>Some representative placeholder content for the third slide of this carousel.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
-        </div>
-      
-      
       
       <div class="container marketing">
-          <hr class="featurette-divider">
-
-          <div class="row featurette" id="AboutUs" >
-          <div class="col-md-7">
-              <h2 class="featurette-heading fw-normal lh-1">About Us</h2>
-              <p class="lead"> Foowd merupakan layanan pemesanan makanan yang bertujuan
-                untuk mengurangi food waste, dengan cara bekerja sama dengan
-                beberapa restoran dan juga umkm dalam bidang fnb untuk menjual
-                makanan sisa penjualan dengan harga murah agar tetap dapat
-                dikonsumsi dan tidak dibuang secara percuma.</p>
-          </div>
-          <div class="col-md-5">
-              <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#ffff"/>
-                <image href="../Image/foowd.png" alt="" width="100%" height="100%">
-              </svg>
-
-          </div>
-          </div>
 
           <hr class="featurette-divider">
 
-          <div class="row" id="Product">
-              <h2 style="text-align: center;">Food Recommendations</h2>
-              <br><br><br><br>
-                <div class="col-lg-4">
-                  <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
-                  <h2 class="fw-normal">Heading</h2>
-                  <p>Some representative placeholder content for the three columns of text below the carousel. This is the first column.</p>
-                  <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
+          @foreach ($list as $l)
+          <div class="col-lg-4 menu-item">
+                    <img
+                      src="{{ asset ('storage/images/' .$l -> foto) }}"
+                      class="menu-img img-fluid"
+                      alt=""
+                  />
+                  <h4>Cream Soup</h4>
+                  <p class="ingredients">KFC Indonesia</p>
+                  <p class="price">Rp. 2.000</p>
                 </div>
-                <div class="col-lg-4">
-                  <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
-                  <h2 class="fw-normal">Heading</h2>
-                  <p>Another exciting bit of representative placeholder content. This time, we've moved on to the second column.</p>
-                  <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
-                </div>
-                <div class="col-lg-4">
-                  <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
-                  <h2 class="fw-normal">Heading</h2>
-                  <p>And lastly this, the third column of representative placeholder content.</p>
-                  <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
-                </div>
-              </div>
-              
-          
-          <hr class="featurette-divider">
+                <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
+                <p><a class="btn btn-secondary" href="/checkout/{{$l -> id}}">Check Out &raquo;</a></p>
 
-          <div class="row" id="Product">
-            <h2 style="text-align: center;">Nearby Restaurant</h2>
-            <br><br><br><br>
-              <div class="col-lg-4">
-                <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
-                <h2 class="fw-normal">Heading</h2>
-                <p>Some representative placeholder content for the three columns of text below the carousel. This is the first column.</p>
-                <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
-              </div>
-              <div class="col-lg-4">
-                <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
-                <h2 class="fw-normal">Heading</h2>
-                <p>Another exciting bit of representative placeholder content. This time, we've moved on to the second column.</p>
-                <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
-              </div>
-              <div class="col-lg-4">
-                <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
-                <h2 class="fw-normal">Heading</h2>
-                <p>And lastly this, the third column of representative placeholder content.</p>
-                <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
-              </div>
-            </div>
             <hr class="featurette-divider">
+          @endforeach
 
       </div>
       <footer id="footer" class="footer">
@@ -138,8 +32,8 @@
               <div>
                 <h4>Address</h4>
                 <p>
-                  Bojongsonag <br />
-                  Banding, BDG 14022 - IDN<br />
+                  Bojongsoang <br />
+                  Bandung, BDG 14022 - IDN<br />
                 </p>
               </div>
             </div>
@@ -226,37 +120,37 @@
           </div>
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill=" #4fb848"/>
-                <image href="/image/waste.png" alt="" width="100%" height="100%">
+              <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="ffff"/>
+                <image href="/image/waste1.jpg" alt="" width="1920px" height="1080px" >
               </svg>
       
               <div class="container">
                 <div class="carousel-caption text-start">
-                  <h1>Foodwaste.</h1>
-                  <p>Some representative placeholder content for the first slide of the carousel.</p>
+                  <h1>Foodwaste</h1>
+                  <p></p>
                 </div>
               </div>
             </div>
             <div class="carousel-item">
-              <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill=" #4fb848"/>
-                <image href="/image/foodws.jpg" alt="" width="100%" height="100%">
+              <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill=" #ffff"/>
+                <image href="/image/waste4.jpeg" alt="" width="1820px" height="788px">
               </svg>
       
               <div class="container">
                 <div class="carousel-caption">
-                  <h1>Another example headline.</h1>
-                  <p>Some representative placeholder content for the second slide of the carousel.</p>
+                  <h1>Another Foodwaste</h1>
+                  <p></p>
                 </div>
               </div>
             </div>
             <div class="carousel-item">
-              <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill=" #4fb848"/>
-                <image href="/image/foodws.jpg" alt="" width="100%" height="100%"></svg>
+              <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill=" #ffff"/>
+                <image href="/image/waste5.png" alt="" width="1920px" height="1080px"></svg>
       
               <div class="container">
                 <div class="carousel-caption text-end">
-                  <h1>One more for good measure.</h1>
-                  <p>Some representative placeholder content for the third slide of this carousel.</p>
+                  <h1>We can reduce this</h1>
+                  <p></p>
                 </div>
               </div>
             </div>
@@ -384,25 +278,28 @@
           <hr class="featurette-divider">
 
           <div class="row" id="Product">
-            <h2 style="text-align: center;">Example Product</h2>
+            <h2 style="text-align: center;">Product</h2>
             <br><br><br><br>
               <div class="col-lg-4">
-                <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
-                <h2 class="fw-normal">Heading</h2>
-                <p>Some representative placeholder content for the three columns of text below the carousel. This is the first column.</p>
-                <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
+                <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#ffff"/>
+                <image href="/image/nasgor.jpg" alt="" width="140px" height="140px"></svg></svg>
+                <h2 class="fw-normal">Nasi Goreng</h2>
+                <p>Nasi Goreng dari restoran terdekat yang pastinya menggunakan bahan bahan terbaik dan layak makan</p>
+                
               </div>
               <div class="col-lg-4">
-                <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
-                <h2 class="fw-normal">Heading</h2>
-                <p>Another exciting bit of representative placeholder content. This time, we've moved on to the second column.</p>
-                <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
+                <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#ffff"/>
+                <image href="/image/bucket.png" alt="" width="140px" height="140px"></svg></svg>
+                <h2 class="fw-normal">Ayam bucket</h2>
+                <p>Ayam dalam bucket dari salah satu restoran fast food yang masih layak makan</p>
+                
               </div>
               <div class="col-lg-4">
-                <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
-                <h2 class="fw-normal">Heading</h2>
-                <p>And lastly this, the third column of representative placeholder content.</p>
-                <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
+                <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#ffff"/>
+                <image href="/image/udon.png" alt="" width="140px" height="140px"></svg></svg>
+                <h2 class="fw-normal">Udon</h2>
+                <p>Udon yang merupakan makanan khas negeri sakura yang tentunya enak dan layak makan</p>
+                
               </div>
               <p align="right"><a href="/login" style="color: black">More...</a></p>
             </div>

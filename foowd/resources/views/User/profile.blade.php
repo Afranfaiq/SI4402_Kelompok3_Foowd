@@ -9,15 +9,15 @@
       <div class="container">
         <center>
           <br />
-          <img src="/Image/pp.png" alt="Avatar" class="avatar" />
         </center>
         <br />
-        <h2 class="text" align="center">Hi, {{ Auth::user()->nama }}</h2>
+        <h2 class="text" align="center">Hi {{ Auth::user()->nama }}</h2>
       </div>
       <br />
       <br />
       <div class="container insert">
-        <form class="row g-3 form-input " enctype="multipart/form-data" action="{{ route('profile.action') }}" method="POST">
+        <form class="row g-3 form-input " enctype="multipart/form-data" action="/updateprof" method="POST">
+          @csrf
           <div class="col-md-12">
             <label for="nama" class="form-label">Nama Lengkap</label>
             <input
@@ -38,26 +38,44 @@
             />
           </div>
           <div class="col-md-6">
-            <label for="inputPassword4" class="form-label">Password</label>
+            <label for="number" class="form-label">Number</label>
+            <input
+              type="number"
+              class="form-control"
+              name = "no_hp"
+              value="{{ Auth::user()->no_hp}}"
+            />
+          </div>
+          <div class="col-md-6">
+            <label for="inputPassword4" class="form-label">New Password</label>
             <input
               type="password"
               class="form-control"
               name = "password"
-              value= "{{ Auth::user()->password }}"
+            />
+          </div>
+          <div class="col-md-6">
+            <label for="inputPassword4" class="form-label">Confirmation Password</label>
+            <input
+              type="password"
+              class="form-control"
+              name = "password_confirmation"
             />
           </div>
           <div class="col-12">
-            <label for="inputAddress" class="form-label">Alamat</label>
+            <label for="alamat" class="form-label">Alamat</label>
             <input
               type="text"
               class="form-control"
               id="inputAddress"
-              value="Jl. Batununggal IV no.11, Kec. Bandung Kidul, Kota Bandung"
+              name ="alamat"
+              value="{{ Auth::user()->alamat}}"
             />
           </div>
 
+
           <div class="col-12">
-            <button type="submit" class="btn btn-primary">Update</button>
+            <button type="submit" class="btn btn-book-a-table">Update</button>
           </div>
         </form>
       </div>
@@ -97,6 +115,8 @@
                 </p>
               </div>
             </div>
+
+            
 
             <div class="col-lg-3 col-md-6 footer-links">
               <h4>Follow Us</h4>

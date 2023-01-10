@@ -20,6 +20,8 @@ return new class extends Migration
             $table->string('no_hp', 255);
             $table->date('birth');
             $table->string('password', 255);
+            $table->string('image', 150)->default('../Image/pp.png');
+            $table->text('alamat')->default('');
             $table->timestamps();
         });
     }

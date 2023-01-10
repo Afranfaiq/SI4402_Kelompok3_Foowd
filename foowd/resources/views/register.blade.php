@@ -19,7 +19,7 @@
         <p class="alert alert-danger">{{ $err }}</p>
         @endforeach
         @endif
-            <form action="{{ route('register.action') }}" method="POST">
+            <form action="/cekregis" method="POST">
             @csrf
                 <a href="/">
                     <img class="mb-4" src="../Image/foowd.png" alt="" width="100" height="">
@@ -31,17 +31,17 @@
                 </div>
                 <br>
                 <div class="form-floating">
-                    <input type="text" class="form-control" id="floatingName" placeholder="Name" name="Name">
+                    <input type="text" class="form-control" id="floatingName" placeholder="Name" name="nama">
                     <label for="floatingPassword">Name</label>
                 </div>
                 <br>
                 <div class="form-floating">
-                    <input type="number" class="form-control" id="floatingInput" placeholder="Phone Number" name="Number">
+                    <input type="number" class="form-control" id="floatingInput" placeholder="Phone Number" name="no_hp">
                     <label for="floatingInput">Phone Number</label>
                 </div>
                 <br>
                 <div class="form-floating">
-                    <input type="date" class="form-control" id="floatingPassword" placeholder="Date Of Birth" name="Date">
+                    <input type="date" class="form-control" id="floatingPassword" placeholder="Date Of Birth" name="birth">
                     <label for="floatingPassword">Date of Birth</label>
                 </div>
                 <br>
@@ -51,7 +51,7 @@
                 </div>
                 <br>
                 <div class="form-floating">
-                    <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="password2">
+                    <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="password_confirmation">
                     <label for="floatingPassword">Password Confirmation</label>
                 </div>
                 <br><br>

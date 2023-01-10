@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,14 +15,25 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('User.home');
-});
 
-Route::get('register', [UserController::class, 'register'])->name('register');
-Route::get('login', [UserController::class, 'login'])->name('login');
-Route::post('register', [UserController::class, 'register_action'])->name('register.action');
-Route::post('login', [UserController::class, 'login_action'])->name('login.action');
-Route::get('logout', [UserController::class, 'logout'])->name('logout');
-Route::get('profile', [UserController::class, 'profile'])->name('profile');
-Route::post('profile', [UserController::class, 'profile_action'])->name('profile.action');
+Route::get('/', [UserController::class, 'home'])->name('home');
+Route::get('/register', [UserController::class, 'register'])->name('register');
+Route::get('/login', [UserController::class, 'login'])->name('login');
+Route::post('/cekregis', [UserController::class, 'cekregis'])->name('cekregis');
+Route::post('/ceklogin', [UserController::class, 'ceklogin'])->name('ceklogin');
+Route::get('/logout', [UserController::class, 'logout'])->name('logout');
+Route::get('/profile', [UserController::class, 'profile'])->name('profile');
+Route::post('/updateprof', [UserController::class, 'updateprof'])->name('updateprof');
+Route::get('/adminlogin', [UserController::class, 'adminlogin'])->name('adminlogin');
+Route::get('/home', [UserController::class, 'home'])->name('home');
+Route::get('/checkout/{id}', [UserController::class, 'checkout'])->name('checkout');
+Route::post('/checkout', [UserController::class, 'inputmakanan'])->name('inputmakanan');
+
+Route::post('/cekloginadmin', [AdminController::class, 'cekloginadmin'])->name('cekloginadmin');
+Route::get('/Admin/homeadmin', [AdminController::class, 'adminlogin'])->name('adminlogin');
+Route::get('/Admin/tableadmin', [AdminController::class, 'tableadmin'])->name('tableadmin');
+Route::get('/Admin/admininput', [AdminController::class, 'inputadmin'])->name('inputadmin');
+Route::post('/Admin/admininput', [AdminController::class, 'cekinput'])->name('cekinput');
+Route::get('/Admin/validateadmin', [AdminController::class, 'validateadmin'])->name('validate');
+Route::get('/Admin/konfirmasi/{id}', [AdminController::class, 'konfirmasi'])->name('konfirmasi');
+Route::put('/Admin/konfirmasi/{id}', [AdminController::class, 'konfirmasipesanan'])->name('konfirmasipesanan');
