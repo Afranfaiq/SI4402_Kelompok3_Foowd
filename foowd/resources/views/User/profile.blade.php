@@ -81,7 +81,7 @@
       </div>
     </section>
     <br><br>
-      <footer id="footer" class="footer">
+      <footer id="footer" class="footer fixed-bottom">
         <div class="container">
           <div class="row gy-3">
             <div class="col-lg-3 col-md-6 d-flex">

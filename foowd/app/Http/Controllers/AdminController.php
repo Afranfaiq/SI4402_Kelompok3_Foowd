@@ -14,7 +14,12 @@ class AdminController extends Controller
 {
     public function adminlogin()
     {
-        return view('Admin.homeadmin');
+        $count =  Food::count();
+        $tr =  Transactions::count();
+        $user = User::count();
+        $transaksi = Transactions::sum('harga');
+        $list = User::all();
+        return view('Admin.homeadmin',compact(['list'],['count'],['transaksi'],['tr'],['user']));
     }
     public function tableadmin()
     {
@@ -71,5 +76,10 @@ class AdminController extends Controller
         $konfirmasipesanan = Transactions::find($id);
         $konfirmasipesanan->update($request->except('_token'));
         return redirect('/Admin/validateadmin');
+    }
+    public function deletemakanan($id){
+        $deletemakanan = Food::find($id);
+        $deletemakanan->delete();
+        return redirect('/Admin/tableadmin');
     }
 }

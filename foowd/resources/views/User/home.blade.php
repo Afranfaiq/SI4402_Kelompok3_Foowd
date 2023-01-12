@@ -2,27 +2,134 @@
   @section('content')
     @auth
       
-      <div class="container marketing">
+    <div class="container marketing">
+          <hr class="featurette-divider">
+
+          <div class="row featurette" id="AboutUs" >
+          <div class="col-md-7">
+          <div class="section-header">
+            <h2>Thank You</h2>
+            <p>Thank's For <span>Joining Us</span></p>
+          </div>
+              <p class="lead"> Terimakasih sudah bergabung menjadi bagian dari 
+                Foowd, dengan bergabungnya anda kami berharap angka foodwaste
+                di Indonesia akan terus berkurang.</p>
+              <p class="lead">Food waste adalah masalah global yang terjadi ketika makanan yang masih layak untuk dikonsumsi 
+                dibuang atau tidak digunakan. Ini dapat terjadi pada berbagai tahap dalam siklus hidup makanan, 
+                mulai dari produksi hingga konsumsi. Penyebab utama dari food waste antara lain adalah standar 
+                estetika yang ketat dari peritel, produksi yang berlebihan, dan kurangnya perencanaan dalam pembelian 
+                makanan. Ini berdampak negatif pada lingkungan, ekonomi, dan sosial.</p>
+              
+              <p class="lead">Beberapa solusi yang dapat digunakan untuk mengurangi food waste antara lain:
+                <ul class="lead">
+                  <li>-Menyadari dan mengurangi pembelian makanan yang berlebihan</li>
+                  <li>-Menyimpan makanan dengan benar untuk memperpanjang umur simpannya</li>
+                  <li>-Menggunakan makanan yang tersisa dari makan malam untuk makan siang esok hari</li>
+                  <li>-Menyumbangkan makanan yang masih layak untuk dikonsumsi ke bank makanan atau panti asuhan.</li>
+                </ul>
+              </p>
+              
+          </div>
+          <div class="col-md-5">
+              <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#ffff"/>
+                <image href="../Image/foowd.png" alt="" width="100%" height="100%">
+              </svg>
+
+          </div>
+          </div>
 
           <hr class="featurette-divider">
 
-          @foreach ($list as $l)
-          <div class="col-lg-4 menu-item">
-                    <img
-                      src="{{ asset ('storage/images/' .$l -> foto) }}"
-                      class="menu-img img-fluid"
-                      alt=""
-                  />
-                  <h4>Cream Soup</h4>
-                  <p class="ingredients">KFC Indonesia</p>
-                  <p class="price">Rp. 2.000</p>
-                </div>
-                <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
-                <p><a class="btn btn-secondary" href="/checkout/{{$l -> id}}">Check Out &raquo;</a></p>
+          <div class="row featurette" id = "Whats">
+          <div class="col-md-7 order-md-2">
+          <div class="section-header">
+            <h2>What's</h2>
+            <p>What's Happening <span>Now</span></p>
+          </div>
+              <p class="lead">Sampah makanan (food waste & food loss) merupakan permasalahan
+                global yang masih sulit teratasi hingga kini. Dalam
+                pengertiannya, food waste merupakan makanan yang telah siap
+                konsumsi oleh manusia namun dibuang begitu saja dan akhirnya
+                menumpuk di tempat pembuangan akhir. Sementara, food loss
+                merupakan sampah makanan yang berasal dari bahan pangan
+                seperti sayuran, buah-buahan atau makanan yang masih mentah
+                namun sudah tidak bisa diolah menjadi makanan dan akhirnya
+                dibuang begitu saja.</p>
+          </div>
+          <div class="col-md-5 order-md-1">
+              <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#ffff"/>
+                <image href="../Image/about-2.jpg" alt="" width="100%" height="100%">
+              </svg>
 
-            <hr class="featurette-divider">
-          @endforeach
+          </div>
+          </div>
+          <hr class="featurette-divider">
 
+          <div class="row featurette" id="AboutUs" >
+          <div class="col-md-7">
+          <div class="section-header">
+            <h2>Data</h2>
+            <p>Foodwaste <span>Data</span></p>
+          </div>
+              <p class="lead">Indonesia merupakan negara yang memiliki 
+                tingkat food waste yang cukup tinggi dibandingkan negara-negara lain 
+                di kawasan ASEAN. Menurut data dari FAO, sekitar 15-20% dari produksi 
+                pangan di Indonesia akhirnya menjadi food waste. Ini dapat disebabkan
+                 oleh faktor-faktor seperti infrastruktur yang kurang baik, kurangnya 
+                 kesadaran akan masalah food waste, dan kurangnya akses ke teknologi 
+                 yang memungkinkan untuk memperpanjang umur simpan makanan.
+              </p>
+              <p class="lead">Di sisi lain, negara-negara lain di kawasan ASEAN juga memiliki 
+                tingkat food waste yang cukup tinggi. Di Malaysia, sekitar 14-15% dari produksi 
+                pangan akhirnya menjadi food waste. Sementara di Filipina, sekitar 17% dari produksi 
+                pangan akhirnya menjadi food waste. Negara-negara lain di ASEAN juga memiliki tingkat 
+                food waste yang cukup tinggi, meskipun angkanya berbeda-beda.
+              </p>
+              <p class="lead">Perlu diingat, bahwa masalah food waste bukan hanya terjadi di Indonesia, 
+                tetapi juga di negara-negara lain di kawasan ASEAN dan juga di seluruh dunia. Karena itu, 
+                perlu ada upaya yang dilakukan oleh pemerintah, perusahaan, dan masyarakat untuk mengurangi 
+                food waste dan memanfaatkan makanan yang masih layak untuk dikonsumsi.
+              </p>
+          </div>
+          <div class="col-md-5">
+              <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#ffff"/>
+                <image href="../Image/data foodwaste.png" alt="" width="100%" height="100%">
+              </svg>
+
+          </div>
+          </div>
+
+          <hr class="featurette-divider">
+
+          <div class="row featurette" id = "Whats">
+          <div class="col-md-7 order-md-2">
+          <div class="section-header">
+            <h2>Reduce</h2>
+            <p>Let's Reduce <span>Now</span></p>
+          </div>
+              <p class="lead">
+                Kita dapat membantu mengurangi sampah foodwaste ini
+                dengan cara membeli makanan yang sisa yang masih layak untuk di konsumsi.
+                Foowd sendiri menyediakan jasa untuk membeli makanan sisa layak konsumsi.
+              </p>
+              <br>
+              <p class="lead">
+                <a href="/menu">
+                  <button class="w-25 btn btn-book-a-table" type="submit">Menu</button>
+                </a>
+              
+              </p>
+          </div>
+          <div class="col-md-5 order-md-1">
+              <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#ffff"/>
+                <image href="../Image/foowd.png" alt="" width="100%" height="100%">
+              </svg>
+
+          </div>
+          </div>
+        
+
+          <hr class="featurette-divider">
       </div>
       <footer id="footer" class="footer">
         <div class="container">
@@ -88,7 +195,7 @@
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample08" aria-controls="navbarsExample08" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>
                 </button>
-                <a href="/"><img src="../Image/foowd.png" width = "100px" height=""  alt=""></a>
+                <a href="/"><img src="../Image/foowd.png" width = "80px" height=""  alt=""></a>
                 
           
                 <div class="collapse navbar-collapse justify-content-md-center" id="navbarsExample08">
@@ -172,7 +279,10 @@
 
           <div class="row featurette" id="AboutUs" >
           <div class="col-md-7">
-              <h2 class="featurette-heading fw-normal lh-1">About Us</h2>
+          <div class="section-header">
+            <h2>About Us</h2>
+            <p>Learn More <span>About Us</span></p>
+          </div>
               <p class="lead"> Foowd merupakan layanan pemesanan makanan yang bertujuan
                 untuk mengurangi food waste, dengan cara bekerja sama dengan
                 beberapa restoran dan juga umkm dalam bidang fnb untuk menjual
@@ -191,7 +301,10 @@
 
           <div class="row featurette" id = "Whats">
           <div class="col-md-7 order-md-2">
-              <h2 class="featurette-heading fw-normal lh-1">What's Happening Now</h2>
+          <div class="section-header">
+            <h2>What's</h2>
+            <p>What's Happening <span>Now</span></p>
+          </div>
               <p class="lead">Sampah makanan (food waste & food loss) merupakan permasalahan
                 global yang masih sulit teratasi hingga kini. Dalam
                 pengertiannya, food waste merupakan makanan yang telah siap
@@ -214,6 +327,7 @@
             <div class="container" data-aos="fade-up">
               <div class="row gy-4">
                 <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                  
                   <div class="why-box">
                     <h3>Mengapa foowd?</h3>
                     <p>
@@ -276,34 +390,32 @@
             </div>
           </section>
           <hr class="featurette-divider">
+          <div class="section-header">
+            <h2>Our Menu</h2>
+            <p>Check Our <span>Menu</span></p>
+          </div>
 
-          <div class="row" id="Product">
-            <h2 style="text-align: center;">Product</h2>
-            <br><br><br><br>
-              <div class="col-lg-4">
-                <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#ffff"/>
-                <image href="/image/nasgor.jpg" alt="" width="140px" height="140px"></svg></svg>
-                <h2 class="fw-normal">Nasi Goreng</h2>
-                <p>Nasi Goreng dari restoran terdekat yang pastinya menggunakan bahan bahan terbaik dan layak makan</p>
+          <div class="row gy-5 " >
+          @foreach ($list as $l)
                 
-              </div>
-              <div class="col-lg-4">
-                <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#ffff"/>
-                <image href="/image/bucket.png" alt="" width="140px" height="140px"></svg></svg>
-                <h2 class="fw-normal">Ayam bucket</h2>
-                <p>Ayam dalam bucket dari salah satu restoran fast food yang masih layak makan</p>
-                
-              </div>
-              <div class="col-lg-4">
-                <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#ffff"/>
-                <image href="/image/udon.png" alt="" width="140px" height="140px"></svg></svg>
-                <h2 class="fw-normal">Udon</h2>
-                <p>Udon yang merupakan makanan khas negeri sakura yang tentunya enak dan layak makan</p>
-                
-              </div>
+                    <div class="col-md-4 menu-item">
+                      <img
+                        src="{{ asset ('storage/images/' .$l -> foto) }}"
+                        class="menu-img img-fluid"
+                        alt=""
+                        width = "200px"
+                    />
+                    <h4>{{$l -> nama_makanan}}</h4>
+                    <p class="ingredients">{{$l -> deskripsi}}</p>
+                  </div>  
+                        
+          @endforeach
+          </div> 
+               
               <p align="right"><a href="/login" style="color: black">More...</a></p>
+              <hr class="featurette-divider">
             </div>
-            <hr class="featurette-divider">
+            
 
       </div>
       <footer id="footer" class="footer">

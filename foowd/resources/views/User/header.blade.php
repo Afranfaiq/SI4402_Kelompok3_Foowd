@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="/asset/home.css">
     <link rel="icon" href="image/logo.png" type="image/icon type">
     <link href="/asset/bootstrap-icons/bootstrap-icons.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Foowd</title>
 </head>
 <body>
@@ -21,21 +22,24 @@
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample08" aria-controls="navbarsExample08" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
-              <a href="/"><img src="../Image/foowd.png" width = "100px" height=""  alt=""></a>
+              <a href="/"><img src="../Image/foowd.png" width = "80px" height=""  alt=""></a>
               
         
               <div class="collapse navbar-collapse justify-content-md-center" id="navbarsExample08">
                 <ul class="navbar-nav">
-                  <li class="nav-item">
-                    <a class="nav-link"  href=#Product>Menu</a>
-                  </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href=/home>Home</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href=/menu>Menu</a>
+                    </li>
                 </ul>
               </div>
               <div class="dropdown">
                 <button class="btn btn-book-a-table dropdown-toggle"  type="button" data-bs-toggle="dropdown" aria-expanded="false">{{ Auth::user()->nama }}</button></a>
                 <ul class="dropdown-menu">
                   <li><a class="dropdown-item" href="/profile">Profile</a></li>
-                  <li><a class="dropdown-item" href="/profile">Transaction</a></li>
+                  <li><a class="dropdown-item" href="/transaction">Transaction</a></li>
                   <li><a class="dropdown-item" href="/logout">Log out</a></li>
                 </ul>
               </div>

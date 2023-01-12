@@ -65,6 +65,11 @@
         <i class="fas fa-fw fa-table"></i>
         <span>Tables</span></a>
 </li>
+<li class="nav-item">
+    <a class="nav-link" href="/Admin/validateadmin">
+        <i class="fas fa-fw fa-table"></i>
+        <span>Validate</span></a>
+</li>
 
 
 
@@ -115,8 +120,22 @@
 
                 </nav>
                 <!-- End of Topbar -->
+                <div class="container-fluid">
 
-                <div class="container">
+                    <!-- Page Heading -->
+                    <h1 class="h3 mb-2 text-gray-800">Konfirmasi Pesanan</h1>
+                    <p class="mb-4">Konfirmasi Pesanan User .</p>
+
+                    <!-- DataTales Example -->
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary">
+                            
+                            </h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                            <div class="container">
                 <form action="" method="POST" enctype="multipart/form-data">
                 @method('put') 
                 @csrf
@@ -125,16 +144,53 @@
               
             
                 <div class="form-floating">
-                    <input value = "{{$list -> status}}"type="text" class="form-control" id="floatingInput" placeholder="" name="status">
-                    <label for="floatingInput">Status</label>
+                    <label for="floatingInput">Nama</label>
+                    <input value = "{{$list -> nama}}"type="text " class="form-control " id="floatingInput" placeholder="" name="nama" readonly>
+                </div>
+                <div class="form-floating">
+                    <label for="floatingInput">Email</label>
+                    <input value = "{{$list -> email}}"type="text " class="form-control " id="floatingInput" placeholder="" name="email" readonly>
+                </div>
+                <div class="form-floating">
+                    <label for="floatingInput">Alamat</label>
+                    <input value = "{{$list -> alamat}}"type="text " class="form-control " id="floatingInput" placeholder="" name="alamat" readonly>
+                </div>
+                <div class="form-floating">
+                    <label for="floatingInput">Nomor Hp</label>
+                    <input value = "{{$list -> no_hp}}"type="text " class="form-control " id="floatingInput" placeholder="" name="no_hp" readonly>
+                </div>
+                <div class="form-floating">
+                    <label for="floatingInput">Pembayaran</label>
+                    <input value = "{{$list -> pembayaran}}"type="text " class="form-control " id="floatingInput" placeholder="" name="pembayaran" readonly>
+                </div>
+                <div class="form-floating">
+                    <label for="floatingInput">Nama Makanan</label>
+                    <input value = "{{$list -> nama_makanan}}"type="text " class="form-control " id="floatingInput" placeholder="" name="nama_makanan" readonly>
+                </div>
+                <div class="form-floating">
+                    <label for="floatingInput">Harga Makanan</label>
+                    <input value = "{{$list->harga}}"type="text " class="form-control " id="floatingInput" placeholder="" name="harga" readonly>
+                </div>
+                <div class="form-floating">
+                    <label for="floatingInput">Status Pesanan</label>
+                    <select class="form-select form-control " aria-label="Default select example" name="status">
+                        <option value="Menunggu Konfirmasi">Menunggu Konfirmasi</option>
+                        <option value="Terkonfirmasi">Terkonfirmasi</option>
+                    </select>
                 </div>
                 <br>
 
                 <br><br>
-                <button class="w-25 btn navcolor text-white"  type="submit">Sumbit</button>
+                <button class="w-25 btn navcolor text-white"  type="submit">Submit</button>
                 <br><br>
                 </form>
                 </div>
+
+            </div>
+        </div>
+    </div>
+
+               
 
 
             <!-- Footer -->
@@ -172,7 +228,7 @@
                 <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="login.html">Logout</a>
+                    <a class="btn btn-primary" href=/logout>Logout</a>
                 </div>
             </div>
         </div>

@@ -118,19 +118,6 @@
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Profile
-                                </a>
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Settings
-                                </a>
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Activity Log
-                                </a>
-                                <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Logout
@@ -147,17 +134,12 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">Tables</h1>
-                    <p class="mb-4">DataTables is a third party plugin that is used to generate the demo table below.
-                        For more information about DataTables, please visit the <a target="_blank"
-                            href="https://datatables.net">official DataTables documentation</a>.</p>
+                    <h1 class="h3 mb-2 text-gray-800">Transaksi User</h1>
+                    <p class="mb-4">Melihat Daftar Transaksi User</p>
 
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">
-                                <a href="/Admin/admininput">Input Makanan</a>
-                            </h6>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -173,17 +155,6 @@
                                             <th>Action</th>
                                         </tr>
                                     </thead>
-                                    <tfoot>
-                                        <tr>
-                                            <th>Nama</th>
-                                            <th>Alamat</th>
-                                            <th>Pilihan Pembayaran</th>
-                                            <th>Menu Makanan</th>
-                                            <th>Harga</th>
-                                            <th>Status Pesanan</th>
-                                            <th>Action</th>
-                                        </tr>
-                                    </tfoot>
                                     <tbody>
                                     @foreach($list as $l)
                                         <tr>
@@ -191,7 +162,7 @@
                                             <td>{{$l->alamat}}</td>
                                             <td>{{$l->pembayaran}}</td>
                                             <td>{{$l->nama_makanan}}</td>
-                                            <td>Rp {{$l->harga}}</td>
+                                            <td>{{$l->harga}}</td>
                                             <td>{{$l->status}}</td>
                                             <td><a href="/Admin/konfirmasi/{{$l->id}}">Konfirmasi</a></td>
                                         </tr>
@@ -212,7 +183,7 @@
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Your Website 2020</span>
+                        <span>Copyright &copy; Foowd 2022</span>
                     </div>
                 </div>
             </footer>
@@ -243,7 +214,7 @@
                 <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="login.html">Logout</a>
+                    <a class="btn btn-primary" href="/logout">Logout</a>
                 </div>
             </div>
         </div>

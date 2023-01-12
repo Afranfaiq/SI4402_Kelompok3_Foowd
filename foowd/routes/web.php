@@ -26,8 +26,12 @@ Route::get('/profile', [UserController::class, 'profile'])->name('profile');
 Route::post('/updateprof', [UserController::class, 'updateprof'])->name('updateprof');
 Route::get('/adminlogin', [UserController::class, 'adminlogin'])->name('adminlogin');
 Route::get('/home', [UserController::class, 'home'])->name('home');
+Route::get('/menu', [UserController::class, 'menu'])->name('menu');
 Route::get('/checkout/{id}', [UserController::class, 'checkout'])->name('checkout');
 Route::post('/checkout', [UserController::class, 'inputmakanan'])->name('inputmakanan');
+Route::get('/transaction', [UserController::class, 'transaction'])->name('transaction');
+Route::get('/detail/{id}', [UserController::class, 'detail'])->name('detail');
+Route::get('/succes', [UserController::class, 'succes'])->name('succes');
 
 Route::post('/cekloginadmin', [AdminController::class, 'cekloginadmin'])->name('cekloginadmin');
 Route::get('/Admin/homeadmin', [AdminController::class, 'adminlogin'])->name('adminlogin');
@@ -37,3 +41,4 @@ Route::post('/Admin/admininput', [AdminController::class, 'cekinput'])->name('ce
 Route::get('/Admin/validateadmin', [AdminController::class, 'validateadmin'])->name('validate');
 Route::get('/Admin/konfirmasi/{id}', [AdminController::class, 'konfirmasi'])->name('konfirmasi');
 Route::put('/Admin/konfirmasi/{id}', [AdminController::class, 'konfirmasipesanan'])->name('konfirmasipesanan');
+Route::delete('/Admin/tableadmin/{id}', [AdminController::class, 'deletemakanan'])->name('deletemakanan');

@@ -62,7 +62,11 @@
                     <i class="fas fa-fw fa-table"></i>
                     <span>Tables</span></a>
             </li>
-
+            <li class="nav-item">
+                <a class="nav-link" href="/Admin/validateadmin">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Validate</span></a>
+            </li>
 
 
         </ul>
@@ -122,12 +126,6 @@
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
 
-                    <!-- Page Heading -->
-                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
-                        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-                                class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
-                    </div>
 
                     <!-- Content Row -->
                     <div class="row">
@@ -139,8 +137,8 @@
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                                Earnings (Monthly)</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">$40,000</div>
+                                                Menu</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{$count}}</div>
                                         </div>
                                         <div class="col-auto">
                                             <i class="fas fa-calendar fa-2x text-gray-300"></i>
@@ -157,8 +155,8 @@
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                                Earnings (Annual)</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">$215,000</div>
+                                                Pendapatan</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">Rp {{number_format($transaksi)}}</div>
                                         </div>
                                         <div class="col-auto">
                                             <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
@@ -174,11 +172,11 @@
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Tasks
+                                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Order
                                             </div>
                                             <div class="row no-gutters align-items-center">
                                                 <div class="col-auto">
-                                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">50%</div>
+                                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">{{$tr}}</div>
                                                 </div>
                                                 <div class="col">
                                                     <div class="progress progress-sm mr-2">
@@ -204,14 +202,49 @@
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
-                                                Pending Requests</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
+                                                User</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{$user}}</div>
                                         </div>
                                         <div class="col-auto">
                                             <i class="fas fa-comments fa-2x text-gray-300"></i>
                                         </div>
                                     </div>
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary">
+                                Nama User
+                            </h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th>Nama User</th>
+                                            <th>Email</th>
+                                            <th>Alamat</th>
+                                            <th>Nomor Hp</th>
+                                            <th>Tanggal Lahir</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach($list as $l)
+                                        <tr>
+                                            <td>{{$l->nama }}</td>
+                                            <td>{{$l->email}}</td>
+                                            <td>{{$l->alamat}}</td>
+                                            <td>{{$l->no_hp}}</td>
+                                            <td>{{$l->birth}}</td>
+                                            @csrf
+                                        </tr>
+                                        @endforeach
+                                        
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>

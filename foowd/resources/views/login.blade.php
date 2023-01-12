@@ -12,39 +12,69 @@
     <link rel="icon" href="/image/logo.png" type="image/icon type">
     <title>Foowd</title>
 </head>
-<body class="text-center">
-    <span class="border form-signin w-100 m-auto rounded" >
-    @if($errors->any())
-        @foreach($errors->all() as $err)
-        <p class="alert alert-danger">{{ $err }}</p>
-        @endforeach
-        @endif
+<body>
+    <section class="h-100 gradient-form" style="background: #a6cba4">
+      <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+          <div class="col-xl-10">
+            <div
+              class="card rounded-3 text-black"
+              style="background-color: #fff"
+            >
+              <div class="row g-0">
+                <div class="col-lg-6">
+                  <div class="card-body py-md-5 mx-md-4">
+             
+                  @if($errors->any())
+                @foreach($errors->all() as $err)
+                <p class="alert alert-danger">{{ $err }}</p>
+                @endforeach
+                @endif
             <form action="/ceklogin" method="POST">
             @csrf
                 <a href="/">
                     <img class="mb-4" src="../Image/foowd.png" alt="" width="100" height="">
                 </a>
-                
-            
-                <div class="form-floating">
-                    <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" name = "email">
-                    <label for="floatingInput">Email address</label>
+                      <div class="form-floating">
+                        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" name = "email">
+                        <label for="floatingInput">Email address</label>
+                    </div>
+                    <br>
+                    <div class="form-floating">
+                        <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name= "password">
+                        <label for="floatingPassword">Password</label>
+                    </div>
+                    <br><br>
+                      <div class="text-center pb-1 mb-2">
+                        <button class="w-50 btn btn-book-a-table"  type="submit">Log in</button>
+                        <br><br>
+                        <a class="nav-link" href="/adminlogin">
+                            <button class="w-50 btn btn-book-a-tables"  type="button">Log in Admin</button>
+                        </a>
+                      </div>
+                        <p>
+                            Doesn't have any account? <a href="/register">Sign Up</a>
+                        </p>
+
+                    
+                    </form>
+                  </div>
                 </div>
-                <br>
-                <div class="form-floating">
-                    <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name= "password">
-                    <label for="floatingPassword">Password</label>
+                <div
+                  class="col-lg-6 d-flex align-items-center gradient-custom-2"
+                >
+                  <div>
+                    <img
+                      src="../Image/Login-bro.png "
+                      style="width: 80%"
+                      alt=""
+                    />
+                  </div>
                 </div>
-                <br><br>
-            
-                </div>
-                <button class="w-25 btn btn-book-a-table"  type="submit">Log in</button>
-                <br><br>
-                <a class="nav-link" href="/adminlogin"><button class="w-25 btn btn-book-a-tables"  type="button">login admin</button></a>
-                </form>
-                <br><br>
-                <p>
-                    Doesn't have any account? <a href="/register">Sign Up</a>
-                </p>
-    </span>  
-</body>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>

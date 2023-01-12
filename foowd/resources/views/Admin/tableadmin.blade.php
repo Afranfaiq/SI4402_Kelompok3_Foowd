@@ -106,9 +106,8 @@
                         </div>
                     </form>
 
-                    <!-- Topbar Navbar -->
-                    <ul class="navbar-nav ml-auto">
-
+                     <!-- Topbar Navbar -->
+                     <ul class="navbar-nav ml-auto">
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
@@ -118,20 +117,7 @@
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Profile
-                                </a>
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Settings
-                                </a>
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Activity Log
-                                </a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                <a class="dropdown-item" href="/#" data-toggle="modal" data-target="#logoutModal">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Logout
                                 </a>
@@ -147,10 +133,8 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">Tables</h1>
-                    <p class="mb-4">DataTables is a third party plugin that is used to generate the demo table below.
-                        For more information about DataTables, please visit the <a target="_blank"
-                            href="https://datatables.net">official DataTables documentation</a>.</p>
+                    <h1 class="h3 mb-2 text-gray-800">List Makanan</h1>
+                    <p class="mb-4">List Makanan yang dapat user pilih</a>.</p>
 
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
@@ -171,23 +155,20 @@
                                             <th>Action</th>
                                         </tr>
                                     </thead>
-                                    <tfoot>
-                                        <tr>
-                                            <th>Nama Makanan</th>
-                                            <th>Deskripsi Makanan</th>
-                                            <th>Harga Makanan</th>
-                                            <th>Foto</th>
-                                            <th>Action</th>
-                                        </tr>
-                                    </tfoot>
                                     <tbody>
                                         @foreach($list as $l)
                                         <tr>
                                             <td>{{$l->nama_makanan }}</td>
                                             <td>{{$l->deskripsi}}</td>
-                                            <td>{{$l->harga}}</td>
+                                            <td>Rp {{number_format($l->harga)}}</td>
                                             <td>{{$l->foto}}</td>
-                                            <td>Hapus | Edit</td>
+                                                <td>
+                                                    <form action="/Admin/tableadmin/{{$l->id}}"  method="post">
+                                                    @csrf
+                                                    @method('delete')
+                                                        <button type ="submit"  class="btn btn-danger btn-edit">Hapus</button>
+                                                    </form>
+                                                </td>
                                         </tr>
                                         @endforeach
                                         

@@ -16,6 +16,10 @@ class UserController extends Controller
     {
         return view('register');
     }
+    public function succes()
+    {
+        return view('User.succes');
+    }
     public function login()
     {
         return view('login');
@@ -24,15 +28,30 @@ class UserController extends Controller
     {
         return view('adminlogin');
     }
+    public function transaction()
+    {
+        $list = Transactions::all();
+        return view('User.transaction', compact('list'));
+    }
     public function checkout($id)
     {
         $list = Food::find($id);
         return view('User.checkout', compact('list'));
     }
+    public function detail($id)
+    {
+        $list = Food::find($id);
+        return view('User.detail', compact('list'));
+    }
     public function home()
     {
         $list = Food::all();
         return view('User.home',compact('list'));
+    }
+    public function menu()
+    {
+        $list = Food::all();
+        return view('User.menu',compact('list'));
     }
         public function cekregis(Request $request){
             $request->validate([
@@ -112,7 +131,7 @@ class UserController extends Controller
 
         ]);
         if($inputmakanan){
-            return redirect('/');
+            return redirect('/succes');
         }
     }
     

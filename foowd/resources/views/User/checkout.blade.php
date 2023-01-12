@@ -1,90 +1,24 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Hugo 0.108.0">
-    <title>Checkout example · Bootstrap v5.3</title>
-    <link rel="stylesheet" href="{{url('/asset/checkout.css')}}">
-
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/checkout/">
-
-    
-
-    
-
-<link href="/asset/bootstrap.min.css" rel="stylesheet">
-
-    <style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        user-select: none;
-      }
-
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
-      }
-
-      .b-example-divider {
-        height: 3rem;
-        background-color: rgba(0, 0, 0, .1);
-        border: solid rgba(0, 0, 0, .15);
-        border-width: 1px 0;
-        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
-      }
-
-      .b-example-vr {
-        flex-shrink: 0;
-        width: 1.5rem;
-        height: 100vh;
-      }
-
-      .bi {
-        vertical-align: -.125em;
-        fill: currentColor;
-      }
-
-      .nav-scroller {
-        position: relative;
-        z-index: 2;
-        height: 2.75rem;
-        overflow-y: hidden;
-      }
-
-      .nav-scroller .nav {
-        display: flex;
-        flex-wrap: nowrap;
-        padding-bottom: 1rem;
-        margin-top: -1px;
-        overflow-x: auto;
-        text-align: center;
-        white-space: nowrap;
-        -webkit-overflow-scrolling: touch;
-      }
-    </style>
-
-  </head>
-  <body class="bg-light">
-    
-<div class="container">
-  <main>
+@extends('user.header')
+  @section('content')
+    @auth
+      
+    <div class="container">
+    <hr class="featurette-divider">
+    <span class=" form-signin w-100 m-auto rounded" >
+      <section>
+  </span>
     <div class="py-5 text-center">
-      <img class="d-block mx-auto mb-4" src="../assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">
-      <h2>Checkout form</h2>
-      <p class="lead">Below is an example form built entirely with Bootstrap’s form controls. Each required form group has a validation state that can be triggered by attempting to submit the form without completing it.</p>
+      <img class="d-block mx-auto mb-4" src="../Image/foowd.png" alt="" width="100" height="">
+      <div class="section-header">
+            <h2>Your Order</h2>
+            <p>Check Out <span>Item</span></p>
+          </div>
     </div>
 
     <div class="row g-5">
       <div class="col-md-5 col-lg-4 order-md-last">
         <h4 class="d-flex justify-content-between align-items-center mb-3">
-          <span class="text-primary">Your cart</span>
+          <span class="section-header">Your cart</span>
         </h4>
         <ul class="list-group mb-3">
           <li class="list-group-item d-flex justify-content-between lh-sm">
@@ -100,19 +34,16 @@
             @csrf 
             <input type="hidden" name="nama_makanan" value="{{$list -> nama_makanan}}">
             <input type="hidden" name="harga" value="{{$list -> harga}}">
-          <div class="input-group">
-            <button type="submit" class="btn btn-secondary">Redeem</button>
-          </div>
-        
+            <img src="{{ asset ('storage/images/' .$list -> foto) }}" alt="">
       </div>
       <div class="col-md-7 col-lg-8">
-        <h4 class="mb-3">Billing address</h4>
+        <h4 class="mb-3">Personal Data</h4>
           <div class="row g-3">
 
             <div class="col-12">
               <label for="username" class="form-label">Name</label>
               <div class="input-group has-validation">
-                <input type="text" class="form-control" id="username" placeholder="Username" required name="nama">
+                <input type="text" class="form-control" id="username" placeholder="Name" required name="nama" value ="{{ Auth::user()->nama }}">
               <div class="invalid-feedback">
                   Your username is required.
                 </div>
@@ -120,24 +51,24 @@
             </div>
 
             <div class="col-12">
-              <label for="email" class="form-label">Email <span class="text-muted">(Optional)</span></label>
-              <input type="email" class="form-control" id="email" placeholder="you@example.com" name = "email">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" class="form-control" id="email" placeholder="you@example.com" required name = "email"  value ="{{ Auth::user()->email }}">
               <div class="invalid-feedback">
-                Please enter a valid email address for shipping updates.
+                Please enter a valid email address.
               </div>
             </div>
 
             <div class="col-12">
               <label for="address" class="form-label">Address</label>
-              <input type="text" class="form-control" id="address" placeholder="1234 Main St" required name ="alamat">
+              <input type="text" class="form-control" id="address" placeholder="" required name ="alamat" value ="{{ Auth::user()->alamat }}">
               <div class="invalid-feedback">
-                Please enter your shipping address.
+                Please enter your  address.
               </div>
             </div>
 
             <div class="col-12">
-              <label for="address2" class="form-label">No hp <span class="text-muted">(Optional)</span></label>
-              <input type="text" class="form-control" id="address2" placeholder="Apartment or suite" name = "no_hp" >
+              <label for="address2" class="form-label">No hp </label>
+              <input type="text" class="form-control" id="address2" placeholder="" required name = "no_hp" value ="{{ Auth::user()->no_hp }}">
             </div>
 
           </div>
@@ -148,40 +79,85 @@
 
           <div class="my-3">
             <div class="form-check">
-              <input id="credit" name="pembayaran"value="credit" type="radio" class="form-check-input" checked required>
-              <label class="form-check-label" for="credit">Credit card</label>
+              <input id="Card" name="pembayaran"value="Card" type="radio" class="form-check-input" checked required>
+              <label class="form-check-label" for="Card">Credit Card</label>
             </div>
             <div class="form-check">
-              <input id="debit" name="pembayaran" type="radio" value = "debit" class="form-check-input" required>
-              <label class="form-check-label" for="debit">Debit card</label>
+              <input id="Bank transfer" name="pembayaran" type="radio" value = "Bank transfer" class="form-check-input" required>
+              <label class="form-check-label" for="Bank transfer">Bank transfer</label>
             </div>
             <div class="form-check">
-              <input id="paypal" name="pembayaran" type="radio" value="paypal" class="form-check-input" required>
-              <label class="form-check-label" for="paypal">PayPal</label>
+              <input id="Digital Wallet" name="pembayaran" type="radio" value="Digital Wallet" class="form-check-input" required>
+              <label class="form-check-label" for="Digital Wallet">Digital Wallet</label>
             </div>
           </div>
 
           <hr class="my-4">
 
-          <button class="w-100 btn btn-primary btn-lg" type="submit">Continue to checkout</button>
+          <button class="w-100 btn btn-book-a-table" type="submit">Pay</button>
         </form>
       </div>
     </div>
-  </main>
-
-  <footer class="my-5 pt-5 text-muted text-center text-small">
-    <p class="mb-1">&copy; 2017–2022 Company Name</p>
-    <ul class="list-inline">
-      <li class="list-inline-item"><a href="#">Privacy</a></li>
-      <li class="list-inline-item"><a href="#">Terms</a></li>
-      <li class="list-inline-item"><a href="#">Support</a></li>
-    </ul>
-  </footer>
+    <hr class="featurette-divider">
 </div>
 
 
-    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+</section>
+ 
 
-      <script src="checkout.js"></script>
-  </body>
-</html>
+      <footer id="footer" class="footer">
+        <div class="container">
+          <div class="row gy-3">
+            <div class="col-lg-3 col-md-6 d-flex">
+              <i class="bi bi-geo-alt icon"></i>
+              <div>
+                <h4>Address</h4>
+                <p>
+                  Bojongsoang <br />
+                  Bandung, BDG 14022 - IDN<br />
+                </p>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 footer-links d-flex">
+              <i class="bi bi-telephone icon"></i>
+              <div>
+                <h4>Customer Service</h4>
+                <p>
+                  <strong>Phone:</strong> +62 87832179458<br />
+                  <strong>Email:</strong> foowd@gmail.com<br />
+                </p>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 footer-links d-flex">
+              <i class="bi bi-clock icon"></i>
+              <div>
+                <h4>Opening Hours</h4>
+                <p>
+                  <strong>Mon-Sun: 8AM</strong> - 23PM<br />
+                </p>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 footer-links">
+              <h4>Follow Us</h4>
+              <div class="social-links d-flex">
+                <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+                <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+                <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+                <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="container">
+          <div class="copyright">
+            &copy; Copyright <strong><span>foowd</span></strong
+            >. All Rights Reserved
+          </div>
+        </div>
+      </footer>
+    @endauth
+  @endsection
